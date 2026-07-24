@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rusty Mana-a</title>
+
+<style>
+
+/* =========================
+   SPORTS THEME
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --navy: #07111f;
+    --dark: #0b1728;
+    --blue: #123b66;
+    --electric: #00aaff;
+    --red: #e63946;
+    --white: #f5f7fa;
+    --gray: #aeb8c4;
+    --gold: #f4b942;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--white);
+
+    background:
+
+        linear-gradient(
+
+            rgba(7,17,31,0.95),
+
+            rgba(7,17,31,0.95)
+
+        ),
+
+        repeating-linear-gradient(
+
+            45deg,
+
+            #07111f 0px,
+
+            #07111f 10px,
+
+            #09182a 10px,
+
+            #09182a 20px
+
+        );
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(7,17,31,0.96);
+
+    border-bottom: 2px solid var(--electric);
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+
+}
+
+
+nav {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.logo {
+
+    color: white;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.logo span {
+
+    color: var(--red);
+
+}
+
+
+nav ul {
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 24px;
+
+}
+
+
+nav ul li a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+nav ul li a:hover {
+
+    color: var(--electric);
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 160px 8% 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #07111f,
+
+            #102c4c,
+
+            #07111f
+
+        );
+
+}
+
+
+.hero::before {
+
+    content: "🏎️";
+
+    position: absolute;
+
+    font-size: 180px;
+
+    opacity: 0.04;
+
+    right: 10%;
+
+    bottom: 5%;
+
+    animation: carFloat 5s infinite ease-in-out;
+
+}
+
+
+@keyframes carFloat {
+
+    0%,100% {
+
+        transform: translateX(0);
+
+    }
+
+    50% {
+
+        transform: translateX(-40px);
+
+    }
+
+}
+
+
+.hero-text {
+
+    max-width: 700px;
+
+    animation: slideIn 1.2s ease;
+
+}
+
+
+@keyframes slideIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(-50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+.hero-text h1 {
+
+    font-size: 62px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-text h1 span {
+
+    color: var(--electric);
+
+}
+
+
+.hero-text h2 {
+
+    font-size: 27px;
+
+    color: var(--red);
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-text p {
+
+    font-size: 18px;
+
+    color: var(--gray);
+
+    margin-bottom: 30px;
+
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    background: var(--red);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 20px rgba(230,57,70,0.4);
+
+}
+
+
+.btn:hover {
+
+    background: var(--electric);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.hero-image {
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 8px solid var(--electric);
+
+    box-shadow:
+
+        0 0 0 10px rgba(0,170,255,0.12),
+
+        0 0 45px rgba(0,170,255,0.5);
+
+    animation: profileFloat 4s infinite ease-in-out;
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+@keyframes profileFloat {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+
+    padding: 100px 8%;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-title span {
+
+    color: var(--electric);
+
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    background: #0d1b2d;
+
+}
+
+
+.about-content {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.about-text p {
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.about-text strong {
+
+    color: var(--electric);
+
+}
+
+
+.info-box {
+
+    padding: 30px;
+
+    background: #101f33;
+
+    border-left: 5px solid var(--red);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+}
+
+
+.info-box p {
+
+    margin-bottom: 12px;
+
+    color: var(--gray);
+
+}
+
+
+.info-box strong {
+
+    color: var(--electric);
+
+}
+
+
+/* =========================
+   HOBBIES
+========================= */
+
+.hobbies {
+
+    background: #07111f;
+
+}
+
+
+.cards {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.card {
+
+    background: #10243b;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border: 1px solid #1c527c;
+
+    border-radius: 10px;
+
+    transition: 0.4s;
+
+    cursor: pointer;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: var(--electric);
+
+    box-shadow: 0 0 30px rgba(0,170,255,0.2);
+
+}
+
+
+.card .icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.card h3 {
+
+    color: var(--electric);
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.card p {
+
+    color: var(--gray);
+
+}
+
+
+.card-details {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height 0.6s ease;
+
+}
+
+
+.card.active .card-details {
+
+    max-height: 700px;
+
+    margin-top: 20px;
+
+}
+
+
+.card-details p {
+
+    margin: 10px 0;
+
+    color: white;
+
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-button {
+
+    width: 100%;
+
+    margin: 8px 0;
+
+    padding: 11px;
+
+    background: var(--red);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.music-button:hover {
+
+    background: var(--electric);
+
+}
+
+
+#audioPlayer {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+   FORMULA 1
+========================= */
+
+.f1-section {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #160b0d,
+
+            #320d12,
+
+            #0b111c
+
+        );
+
+    overflow: hidden;
+
+}
+
+
+.f1-content {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.f1-content h3 {
+
+    color: var(--red);
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.f1-content p {
+
+    color: var(--gray);
+
+}
+
+
+.race-track {
+
+    max-width: 1150px;
+
+    height: 220px;
+
+    margin: 50px auto 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        repeating-linear-gradient(
+
+            90deg,
+
+            #111 0px,
+
+            #111 50px,
+
+            #222 50px,
+
+            #222 100px
+
+        );
+
+    border-top: 6px solid var(--red);
+
+    border-bottom: 6px solid var(--red);
+
+}
+
+
+.race-track::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    top: 50%;
+
+    border-top: 4px dashed white;
+
+}
+
+
+.race-car {
+
+    position: absolute;
+
+    top: 35%;
+
+    left: -200px;
+
+    font-size: 70px;
+
+    animation: race 6s linear infinite;
+
+}
+
+
+@keyframes race {
+
+    from {
+
+        left: -200px;
+
+    }
+
+    to {
+
+        left: 110%;
+
+    }
+
+}
+
+
+/* =========================
+   FOOTBALL
+========================= */
+
+.football-section {
+
+    background: #0d1b2d;
+
+}
+
+
+.football-card {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 55px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #123b2b,
+
+            #0b2c21
+
+        );
+
+    border: 2px solid #49a078;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+
+}
+
+
+.football-logo {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.football-card h3 {
+
+    color: #f5d547;
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.football-card p {
+
+    color: #c6d5cc;
+
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+
+    background: #07111f;
+
+}
+
+
+.skills-container {
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+
+.skill {
+
+    margin-bottom: 25px;
+
+}
+
+
+.skill-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
+
+
+.skill-title span:last-child {
+
+    color: var(--electric);
+
+}
+
+
+.skill-bar {
+
+    height: 13px;
+
+    background: #1b2d42;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.skill-progress {
+
+    height: 100%;
+
+    width: 0;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(--red),
+
+            var(--electric)
+
+        );
+
+    transition: width 2s ease;
+
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education {
+
+    background: #0d1b2d;
+
+}
+
+
+.education-box {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: #101f33;
+
+    border: 1px solid #1c527c;
+
+    border-radius: 10px;
+
+}
+
+
+.education-box h3 {
+
+    color: var(--electric);
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.education-box p {
+
+    color: var(--gray);
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+
+    background: #050b13;
+
+}
+
+
+.contact-content {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.contact-content p {
+
+    color: var(--gray);
+
+    margin-bottom: 30px;
+
+}
+
+
+.contact-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.contact-item {
+
+    min-width: 270px;
+
+    padding: 25px;
+
+    background: #10243b;
+
+    border: 1px solid #1c527c;
+
+    border-radius: 8px;
+
+}
+
+
+.contact-item strong {
+
+    display: block;
+
+    color: var(--electric);
+
+    margin-bottom: 8px;
+
+}
+
+
+.contact-item a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+.contact-item a:hover {
+
+    color: var(--electric);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #020509;
+
+    color: #778899;
+
+    text-align: center;
+
+    padding: 25px;
+
+}
+
+
+footer span {
+
+    color: var(--red);
+
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+#topBtn {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: none;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+
+    }
+
+
+    .hero {
+
+        text-align: center;
+
+        flex-direction: column-reverse;
+
+        padding-top: 180px;
+
+    }
+
+
+    .hero-text h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .hero-image {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+
+    .about-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .football-card {
+
+        padding: 35px 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<nav>
+
+
+<div class="logo">
+
+Rusty<span>.</span>
+
+</div>
+
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#hobbies">Hobbies</a></li>
+
+<li><a href="#f1">Formula 1</a></li>
+
+<li><a href="#football">Football</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#education">Education</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+
+<div class="hero-text">
+
+
+<h1>
+
+Hello, I'm
+
+<span>
+
+Rusty Mana-a
+
+</span>
+
+</h1>
+
+
+<h2>
+
+Criminology Student • Sports Fan • Gamer
+
+</h2>
+
+
+<p>
+
+Welcome to my personal website.
+
+Here you can discover my journey,
+
+my interests, my favorite sports,
+
+music, games, Formula 1 passion,
+
+and my love for football.
+
+</p>
+
+
+<a href="#about" class="btn">
+
+ENTER MY WORLD
+
+</a>
+
+
+</div>
+
+
+<div class="hero-image">
+
+<img src="rusty.jpg" alt="Rusty Mana-a">
+
+</div>
+
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+
+<h2 class="section-title">
+
+About <span>Me</span>
+
+</h2>
+
+
+<div class="about-content">
+
+
+<div class="about-text">
+
+
+<p>
+
+My name is
+
+<strong>Rusty Mana-a</strong>.
+
+I was born in
+
+<strong>Sagada, Mountain Province</strong>.
+
+</p>
+
+
+<p>
+
+I am currently studying
+
+<strong>Criminology</strong>
+
+at the
+
+<strong>University of the Cordilleras</strong>.
+
+</p>
+
+
+<p>
+
+Outside my studies, I enjoy
+
+music, gaming, Formula 1,
+
+football, and discovering new
+
+things.
+
+</p>
+
+
+</div>
+
+
+<div class="info-box">
+
+
+<p>
+
+<strong>Name:</strong>
+
+Rusty Mana-a
+
+</p>
+
+
+<p>
+
+<strong>Born:</strong>
+
+Sagada, Mountain Province
+
+</p>
+
+
+<p>
+
+<strong>Course:</strong>
+
+Criminology
+
+</p>
+
+
+<p>
+
+<strong>University:</strong>
+
+University of the Cordilleras
+
+</p>
+
+
+<p>
+
+<strong>Elementary:</strong>
+
+Crystal Cave Elementary School
+
+</p>
+
+
+<p>
+
+<strong>High School:</strong>
+
+Roxas National High School
+
+</p>
+
+
+<p>
+
+<strong>Senior High School:</strong>
+
+Roxas National High School
+
+</p>
+
+
+<p>
+
+<strong>Email:</strong>
+
+Rustymanaa987@gmail.com
+
+</p>
+
+
+<p>
+
+<strong>Facebook:</strong>
+
+Rusty Manaa
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- HOBBIES -->
+
+<section class="hobbies" id="hobbies">
+
+
+<h2 class="section-title">
+
+My <span>Interests</span>
+
+</h2>
+
+
+<div class="cards">
+
+
+<!-- MUSIC -->
+
+<div class="card" onclick="toggleCard(this)">
+
+
+<div class="icon">
+
+🎵
+
+</div>
+
+
+<h3>
+
+Music
+
+</h3>
+
+
+<p>
+
+Click to reveal my playlist
+
+</p>
+
+
+<div class="card-details">
+
+
+<p>
+
+🎶 Iris
+
+</p>
+
+
+<button class="music-button"
+
+onclick="event.stopPropagation(); playSong('iris.mp3', this)">
+
+▶ Play Iris
+
+</button>
+
+
+<p>
+
+🎶 She's Everything - Brad Paisley
+
+</p>
+
+
+<button class="music-button"
+
+onclick="event.stopPropagation(); playSong('shes-everything.mp3', this)">
+
+▶ Play She's Everything
+
+</button>
+
+
+<p>
+
+🎶 Ibbay - El Sarlipan
+
+</p>
+
+
+<button class="music-button"
+
+onclick="event.stopPropagation(); playSong('ibbay.mp3', this)">
+
+▶ Play Ibbay
+
+</button>
+
+
+<audio id="audioPlayer" controls>
+
+Your browser does not support audio.
+
+</audio>
+
+
+</div>
+
+
+</div>
+
+
+<!-- GAMING -->
+
+<div class="card" onclick="toggleCard(this)">
+
+
+<div class="icon">
+
+🎮
+
+</div>
+
+
+<h3>
+
+Gaming
+
+</h3>
+
+
+<p>
+
+My favorite games
+
+</p>
+
+
+<div class="card-details">
+
+
+<p>
+
+⚔️ Clash of Clans
+
+</p>
+
+
+<p>
+
+🏆 League of Legends
+
+</p>
+
+
+<p>
+
+🎯 Valorant
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<!-- TECHNOLOGY -->
+
+<div class="card" onclick="toggleCard(this)">
+
+
+<div class="icon">
+
+💻
+
+</div>
+
+
+<h3>
+
+Technology
+
+</h3>
+
+
+<p>
+
+My digital interests
+
+</p>
+
+
+<div class="card-details">
+
+
+<p>
+
+🌐 Website Design
+
+</p>
+
+
+<p>
+
+💡 Creativity
+
+</p>
+
+
+<p>
+
+🚀 Learning New Things
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- FORMULA 1 -->
+
+<section class="f1-section" id="f1">
+
+
+<h2 class="section-title">
+
+🏎️ <span>FORMULA 1</span>
+
+</h2>
+
+
+<div class="f1-content">
+
+
+<h3>
+
+Ferrari Fan
+
+</h3>
+
+
+<p>
+
+I love the speed, technology,
+
+strategy, competition, and excitement
+
+of Formula 1. I am also a proud
+
+Ferrari fan.
+
+</p>
+
+
+</div>
+
+
+<div class="race-track">
+
+
+<div class="race-car">
+
+🏎️
+
+</div>
+
+
+</div>
+
+
+<p style="text-align:center;color:#aeb8c4;">
+
+LIGHTS OUT AND AWAY WE GO!
+
+</p>
+
+
+</section>
+
+
+<!-- FOOTBALL -->
+
+<section class="football-section" id="football">
+
+
+<h2 class="section-title">
+
+⚽ <span>FOOTBALL</span>
+
+</h2>
+
+
+<div class="football-card">
+
+
+<div class="football-logo">
+
+⚽🏆
+
+</div>
+
+
+<h3>
+
+HALA MADRID!
+
+</h3>
+
+
+<p>
+
+I am a football fan and my favorite
+
+club is
+
+<strong>Real Madrid</strong>.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+I enjoy the passion, teamwork,
+
+competition, history, and excitement
+
+of football.
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+
+<h2 class="section-title">
+
+My <span>Skills</span>
+
+</h2>
+
+
+<div class="skills-container">
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Web Development</span>
+
+<span>75%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="75%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Gaming</span>
+
+<span>70%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="90%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Music Appreciation</span>
+
+<span>95%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="95%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Formula 1 Knowledge</span>
+
+<span>50%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="50%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Football Knowledge</span>
+
+<span>50%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="50%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="skill">
+
+
+<div class="skill-title">
+
+<span>Creativity</span>
+
+<span>80%</span>
+
+</div>
+
+
+<div class="skill-bar">
+
+<div class="skill-progress"
+
+data-width="80%">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+
+
+<h2 class="section-title">
+
+My <span>Education</span>
+
+</h2>
+
+
+<div class="education-box">
+
+
+<h3>
+
+My Educational Journey
+
+</h3>
+
+
+<p>
+
+<strong>Elementary:</strong>
+
+Crystal Cave Elementary School
+
+</p>
+
+
+<p>
+
+<strong>High School:</strong>
+
+Roxas National High School
+
+</p>
+
+
+<p>
+
+<strong>Senior High School:</strong>
+
+Roxas National High School
+
+</p>
+
+
+<p>
+
+<strong>College:</strong>
+
+University of the Cordilleras
+
+</p>
+
+
+<p>
+
+<strong>Course:</strong>
+
+Bachelor of Science Criminology
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+
+<h2 class="section-title">
+
+Contact <span>Me</span>
+
+</h2>
+
+
+<div class="contact-content">
+
+
+<p>
+
+Connect with me through the information below.
+
+</p>
+
+
+<div class="contact-info">
+
+
+<div class="contact-item">
+
+
+<strong>
+
+Email
+
+</strong>
+
+
+<a href="mailto:Rustymanaa987@gmail.com">
+
+Rustymanaa987@gmail.com
+
+</a>
+
+
+</div>
+
+
+<div class="contact-item">
+
+
+<strong>
+
+Facebook
+
+</strong>
+
+
+<a href="https://www.facebook.com/"
+
+target="_blank">
+
+Rusty Mana-a
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+<p>
+
+© 2026
+
+<span>Rusty Mana-a</span>.
+
+All Rights Reserved.
+
+</p>
+
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn"
+
+onclick="goTop()">
+
+↑
+
+</button>
+
+
+<script>
+
+
+/* =========================
+   INTERACTIVE CARDS
+========================= */
+
+function toggleCard(card) {
+
+    card.classList.toggle("active");
+
+}
+
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+const audioPlayer =
+
+document.getElementById("audioPlayer");
+
+
+function playSong(song, button) {
+
+
+    if (
+
+        audioPlayer.src.endsWith(song)
+
+        && !audioPlayer.paused
+
+    ) {
+
+
+        audioPlayer.pause();
+
+
+        button.innerHTML = "▶ Play";
+
+
+        return;
+
+
+    }
+
+
+    audioPlayer.src = song;
+
+
+    audioPlayer.load();
+
+
+    audioPlayer.play()
+
+    .then(function() {
+
+
+        button.innerHTML = "⏸ Pause";
+
+
+    })
+
+
+    .catch(function(error) {
+
+
+        alert(
+
+            "Music file not found. Make sure the MP3 file is in the same folder as your HTML file."
+
+        );
+
+
+        console.log(error);
+
+
+    });
+
+
+}
+
+
+/* =========================
+   ANIMATED SKILL BARS
+========================= */
+
+const skillBars =
+
+document.querySelectorAll(
+
+".skill-progress"
+
+);
+
+
+const observer =
+
+new IntersectionObserver(
+
+function(entries) {
+
+
+entries.forEach(function(entry) {
+
+
+if (entry.isIntersecting) {
+
+
+skillBars.forEach(function(bar) {
+
+
+bar.style.width =
+
+bar.getAttribute("data-width");
+
+
+});
+
+
+}
+
+
+});
+
+
+},
+
+{
+
+threshold: 0.3
+
+}
+
+);
+
+
+observer.observe(
+
+document.querySelector(".skills")
+
+);
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+const topBtn =
+
+document.getElementById("topBtn");
+
+
+window.addEventListener(
+
+"scroll",
+
+function() {
+
+
+if (window.scrollY > 500) {
+
+
+topBtn.style.display = "block";
+
+
+}
+
+else {
+
+
+topBtn.style.display = "none";
+
+
+}
+
+
+});
+
+
+function goTop() {
+
+
+window.scrollTo({
+
+top: 0,
+
+behavior: "smooth"
+
+});
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
